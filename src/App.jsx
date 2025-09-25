@@ -10,6 +10,7 @@ import Blog from "./pages/Blog";
 
 // Components
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
         </Routes>
       </main>
+
+      <Footer />
 
     </Router>
   )

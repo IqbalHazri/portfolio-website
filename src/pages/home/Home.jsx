@@ -17,7 +17,7 @@ const experiences = [
     skills: ["Python", "Wazuh", "Elasticsearch", "FastAPI", "Docker", "PQC", "Bash Scripting", "Virtual Machine"]
   },
   {
-    role: "Researcher Assistant",
+    role: "Research Assistant",
     company: "Universiti Kebangsaan Malaysia",
     location: "Bangi, MY",
     start: "Mar 2022",
@@ -172,16 +172,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-      {/* <section className="text-center">
-        <h2 className="text-3xl font-semibold mb-6 text-[rgb(255,136,17)]">Contact</h2>
-        <p className="text-gray-200">
-          Let’s connect! Reach me at{" "}
-          <a href="mailto:muhdiqbalhazri@gmail.com" className="text-indigo-600 hover:underline">muhdiqbalhazri@gmail.com</a> or check out my{" "}
-          <a href="https://github.com/IqbalHazri" target="_blank" rel="noreferrer" className="text-indigo-600 hover:underline">
-            GitHub
-          </a>.
-        </p>
-      </section> */}
     </main>
   );
 }
