@@ -124,14 +124,14 @@ export default function Home() {
       </section>
 
       {/* Projects Section (preview) */}
-      <section className="mb-20 text-center">
+      {/* <section className="mb-20 text-center">
         <h2 className="text-3xl font-semibold mb-8 text-[rgb(255,136,17)]">Featured Projects</h2>
         <ul className="space-y-4 inline-block text-left text-gray-100">
           <li className="hover:text-[rgb(255,136,17)] transition-colors duration-200">🔐 Presidio-based PII Detection API</li>
           <li className="hover:text-[rgb(255,136,17)] transition-colors duration-200">📊 Wazuh Custom Dashboards</li>
           <li className="hover:text-[rgb(255,136,17)] transition-colors duration-200">🌌 AGN & Galaxy Research (Astrophysics)</li>
         </ul>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section className="text-center py-16 bg-[rgb(10,34,57)]">

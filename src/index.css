@@ -8,13 +8,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* body {
-  font-family: 'Darker Grotesque Variable', sans-serif;
-  background-color: #fdfdfd;
-  color: #222;
-  line-height: 1.5;
-} */
-
 /* ===== Scrollbar Styling ===== */
 ::-webkit-scrollbar {
   width: 8px;
@@ -59,5 +52,13 @@ html, body {
   }
   h1, h2, h3, h4 {
     font-family: "Playfair Display", serif;
+  }
+}
+
+
+/* Global Dark Background */
+@layer base {
+  html, body, #root {
+    @apply bg-[rgb(10,34,57)] text-white min-h-screen;
   }
 }
