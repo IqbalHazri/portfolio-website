@@ -62,3 +62,20 @@ html, body {
     @apply bg-[rgb(10,34,57)] text-white min-h-screen;
   }
 }
+
+
+/* Pulsating Text for Ongoing */
+@keyframes pulse-status {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-status {
+  animation: pulse-status 2s ease-in-out infinite;
+}

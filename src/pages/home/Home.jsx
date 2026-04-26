@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, Cloud } from "lucide-react";
 
 // Job experiences
 const experiences = [
@@ -123,15 +123,37 @@ export default function Home() {
         </ol>
       </section>
 
-      {/* Projects Section (preview) */}
-      {/* <section className="mb-20 text-center">
-        <h2 className="text-3xl font-semibold mb-8 text-[rgb(255,136,17)]">Featured Projects</h2>
-        <ul className="space-y-4 inline-block text-left text-gray-100">
-          <li className="hover:text-[rgb(255,136,17)] transition-colors duration-200">🔐 Presidio-based PII Detection API</li>
-          <li className="hover:text-[rgb(255,136,17)] transition-colors duration-200">📊 Wazuh Custom Dashboards</li>
-          <li className="hover:text-[rgb(255,136,17)] transition-colors duration-200">🌌 AGN & Galaxy Research (Astrophysics)</li>
-        </ul>
-      </section> */}
+      {/* Professional Certificates */}
+      <section className="max-w-3xl mx-auto mb-20 text-center">
+        <h2 className="text-3xl font-semibold mb-8 text-[rgb(255,136,17)]">Professional Certificates</h2>
+
+        {/* AWS Cloud Practitioner */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-5 shadow-lg hover:shadow-xl transition-shadow flex items-start gap-4 max-w-md mx-auto text-left">
+          {/* AWS Icon */}
+          <div className="flex-shrink-0 mt-1">
+            <img 
+              src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" 
+              alt="AWS Certified Cloud Practitioner badge"
+              className="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-white">
+              AWS Certified Cloud Practitioner
+            </h3>
+            <p className="text-sm text-white/70 mt-1">Amazon Web Services</p>
+            <span className="inline-block mt-3 text-xs font-medium rounded-full px-2.5 py-1 border animate-pulse-status"
+            style={{
+              color: "rgb(255,136,17)",
+              borderColor: "rgba(255,136,17,0.5)",
+              background: "rgba(255,136,17,0.08)",
+            }}>
+              Ongoing
+            </span>
+          </div>
+        </div>
+
+      </section>
 
       {/* Contact Section */}
       <section className="text-center py-16 bg-[rgb(10,34,57)]">
