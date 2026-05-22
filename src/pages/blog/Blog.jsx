@@ -13,7 +13,7 @@ export default function Blog() {
 
           <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-white">Blog<span className="text-[rgb(255,136,17)]">.</span></h1>
           <p className="mt-3 max-w-2xl text-white/70">
-            Thoughts on cybersecurity, quantum computing, and building things.
+            Thoughts on cybersecurity, DIY, and building things.
           </p>
           <div className="mt-6 h-[3px] w-24 bg-gradient-to-r from-[rgb(255,136,17)] to-white/0 rounded-full" />
         </header>
