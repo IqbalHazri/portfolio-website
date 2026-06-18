@@ -28,7 +28,7 @@ export default function Navbar() {
     `md:w-fit md:min-w-0 w-full ` +
     `md:rounded-full rounded-2xl ` +
     `border border-white/10 shadow-lg shadow-black/20 ` +
-    `bg-[rgb(10,34,57)]/80 backdrop-blur-xl`;
+    `md:bg-[rgb(10,34,57)]/80 md:backdrop-blur-xl bg-[rgb(10,34,57)]`;
 
   return (
     <nav className={navShell}>
@@ -50,41 +50,40 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white focus-visible:ring-2 focus-visible:ring-white/40"
-          aria-label="Open menu"
+          aria-label="Toggle menu"
           aria-expanded={open}
-          onClick={() => setOpen(true)}
+          onClick={() => setOpen((prev) => !prev)}
         >
-          <Menu size={24} />
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Overlay */}
+      {/* Mobile dropdown */}
       <div
-        className={`md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} z-40`}
-        onClick={() => setOpen(false)}
-      />
-
-      {/* Slide-over panel */}
-      <div
-        className={`md:hidden fixed top-0 right-0 h-full w-72 max-w-[80%] bg-[rgb(10,34,57)]/95 backdrop-blur-xl shadow-xl border-l border-white/10 transition-transform duration-200 ${open ? "translate-x-0" : "translate-x-full"} z-50`}
-        role="dialog"
-        aria-modal="true"
+        className={`md:hidden absolute left-0 right-0 top-full mt-1 rounded-2xl border border-white/10 bg-[rgb(6,22,40)] shadow-xl transition-all duration-200 ${open ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"} origin-top z-50`}
       >
-        <div className="h-16 px-4 flex items-center justify-between border-b border-white/10">
-          <span className="text-white font-semibold">Menu</span>
-          <button
-            className="p-2 rounded-md text-white focus-visible:ring-2 focus-visible:ring-white/40"
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-          >
-            <X size={24} />
-          </button>
-        </div>
-
         <div className="px-4 py-4 flex flex-col gap-2">
-          <NavLink to="/" className={({ isActive }) => `${getLinkClass({ isActive })} block`} onClick={() => setOpen(false)}>Home</NavLink>
-          <NavLink to="/projects" className={({ isActive }) => `${getLinkClass({ isActive })} block`} onClick={() => setOpen(false)}>Projects</NavLink>
-          <NavLink to="/blog" className={({ isActive }) => `${getLinkClass({ isActive })} block`} onClick={() => setOpen(false)}>Blog</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? "text-[rgb(255,136,17)] font-semibold bg-white/5" : "text-white/80 hover:text-white hover:bg-white/5"}`
+            }
+            onClick={() => setOpen(false)}
+          >Home</NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? "text-[rgb(255,136,17)] font-semibold bg-white/5" : "text-white/80 hover:text-white hover:bg-white/5"}`
+            }
+            onClick={() => setOpen(false)}
+          >Projects</NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? "text-[rgb(255,136,17)] font-semibold bg-white/5" : "text-white/80 hover:text-white hover:bg-white/5"}`
+            }
+            onClick={() => setOpen(false)}
+          >Blog</NavLink>
         </div>
       </div>
     </nav>
