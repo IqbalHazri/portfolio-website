@@ -24,13 +24,15 @@ export default function Navbar() {
 
   // Floating island shell
   const navShell =
-    `fixed inset-x-0 top-4 z-50 mx-auto w-fit min-w-[400px] ` +
-    `rounded-full border border-white/10 shadow-lg shadow-black/20 ` +
+    `fixed inset-x-0 top-4 z-50 mx-auto ` +
+    `md:w-fit md:min-w-0 w-full ` +
+    `md:rounded-full rounded-2xl ` +
+    `border border-white/10 shadow-lg shadow-black/20 ` +
     `bg-[rgb(10,34,57)]/80 backdrop-blur-xl`;
 
   return (
     <nav className={navShell}>
-      <div className="flex items-center justify-between gap-8 px-6 py-2.5">
+      <div className="flex items-center justify-between gap-8 md:px-6 px-4 py-2.5">
         {/* Logo */}
         <NavLink to="/" className="text-xl font-bold tracking-wide shrink-0">
           <span className="font-['Playfair_Display',serif] text-white">Iqbal</span>
