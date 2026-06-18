@@ -23,7 +23,7 @@ function App() {
       {/* Sticky Navbar */}
       <Navbar />
 
-      <main className="pt-16">
+      <main className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />

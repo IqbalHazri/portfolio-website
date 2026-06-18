@@ -19,29 +19,33 @@ export default function Navbar() {
     `${linkBase} ${
       isActive
         ? "text-white after:absolute after:left-3 after:right-3 after:-bottom-1 after:h-[2px] after:bg-[rgb(255,136,17)] after:content-['']"
-        : "text-white hover:bg-[rgb(255,136,17)] hover:text-white"
+        : "text-white/70 hover:text-white"
     }`;
 
-  // when open => solid bg + no blur. when closed => translucent + blur.
+  // Floating island shell
   const navShell =
-    `fixed top-0 left-0 w-full z-50 shadow-lg shadow-[rgb(255,136,17)]/20 ` +
-    (open ? "bg-[rgb(10,34,57)]" : "bg-[rgb(10,34,57)]/70 backdrop-blur-md");
+    `fixed inset-x-0 top-4 z-50 mx-auto w-fit min-w-[400px] ` +
+    `rounded-full border border-white/10 shadow-lg shadow-black/20 ` +
+    `bg-[rgb(10,34,57)]/80 backdrop-blur-xl`;
 
   return (
     <nav className={navShell}>
-      <div className="max-w-6xl mx-auto px-4 h-16 flex justify-between items-center">
-        <NavLink to="/" className="text-xl font-bold tracking-wide">
+      <div className="flex items-center justify-between gap-8 px-6 py-2.5">
+        {/* Logo */}
+        <NavLink to="/" className="text-xl font-bold tracking-wide shrink-0">
           <span className="font-['Playfair_Display',serif] text-white">Iqbal</span>
           <span className="text-[rgb(255,136,17)]">.</span>
           <span className="font-['Playfair_Display',serif] text-white/80 text-lg">Hazri</span>
         </NavLink>
 
-        <div className="hidden md:flex items-center space-x-2">
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-1">
           <NavLink to="/" className={getLinkClass}>Home</NavLink>
           <NavLink to="/projects" className={getLinkClass}>Projects</NavLink>
           <NavLink to="/blog" className={getLinkClass}>Blog</NavLink>
         </div>
 
+        {/* Mobile hamburger */}
         <button
           className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white focus-visible:ring-2 focus-visible:ring-white/40"
           aria-label="Open menu"
@@ -52,15 +56,15 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Overlay (make it nearly opaque) */}
+      {/* Overlay */}
       <div
-        className={`md:hidden fixed inset-0 bg-black/90 transition-opacity ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} z-40`}
+        className={`md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} z-40`}
         onClick={() => setOpen(false)}
       />
 
-      {/* Slide-over panel (ensure it's above the overlay) */}
+      {/* Slide-over panel */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-72 max-w-[80%] bg-[rgb(10,34,57)] shadow-xl border-l border-white/10 transition-transform duration-200 ${open ? "translate-x-0" : "translate-x-full"} z-50`}
+        className={`md:hidden fixed top-0 right-0 h-full w-72 max-w-[80%] bg-[rgb(10,34,57)]/95 backdrop-blur-xl shadow-xl border-l border-white/10 transition-transform duration-200 ${open ? "translate-x-0" : "translate-x-full"} z-50`}
         role="dialog"
         aria-modal="true"
       >
