@@ -8,6 +8,10 @@ const experiences = [
     location: "Kuala Lumpur, MY",
     start: "Sep 2026",
     end: "Present",
+    bullets: [
+      "Develop and maintain security tools used by internal teams."
+    ],
+    skills: ["Python", "FastAPI", "Docker", "Bash Scripting", "Kubernetes", "Cloud Security"]
   },
   {
     role: "Cybersecurity Engineer",
