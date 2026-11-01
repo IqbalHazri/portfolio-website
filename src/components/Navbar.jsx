@@ -19,64 +19,71 @@ export default function Navbar() {
     `${linkBase} ${
       isActive
         ? "text-white after:absolute after:left-3 after:right-3 after:-bottom-1 after:h-[2px] after:bg-[rgb(255,136,17)] after:content-['']"
-        : "text-white hover:bg-[rgb(255,136,17)] hover:text-white"
+        : "text-white/70 hover:text-white"
     }`;
 
-  // when open => solid bg + no blur. when closed => translucent + blur.
+  // Floating island shell
   const navShell =
-    `fixed top-0 left-0 w-full z-50 shadow-lg shadow-[rgb(255,136,17)]/20 ` +
-    (open ? "bg-[rgb(10,34,57)]" : "bg-[rgb(10,34,57)]/70 backdrop-blur-md");
+    `fixed inset-x-0 top-4 z-50 mx-auto ` +
+    `md:w-fit md:min-w-0 w-full ` +
+    `md:rounded-full rounded-2xl ` +
+    `border border-white/10 shadow-lg shadow-black/20 ` +
+    `md:bg-[rgb(10,34,57)]/80 md:backdrop-blur-xl bg-[rgb(10,34,57)]`;
 
   return (
     <nav className={navShell}>
-      <div className="max-w-6xl mx-auto px-4 h-16 flex justify-between items-center">
-        <NavLink to="/" className="text-xl font-bold text-white tracking-wide">
-          Iqbal Hazri
+      <div className="flex items-center justify-between gap-8 md:px-6 px-4 py-2.5">
+        {/* Logo */}
+        <NavLink to="/" className="text-xl font-bold tracking-wide shrink-0">
+          <span className="font-['Playfair_Display',serif] text-white">Iqbal</span>
+          <span className="text-[rgb(255,136,17)]">.</span>
+          <span className="font-['Playfair_Display',serif] text-white/80 text-lg">Hazri</span>
         </NavLink>
 
-        <div className="hidden md:flex items-center space-x-2">
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-1">
           <NavLink to="/" className={getLinkClass}>Home</NavLink>
           <NavLink to="/projects" className={getLinkClass}>Projects</NavLink>
           <NavLink to="/blog" className={getLinkClass}>Blog</NavLink>
         </div>
 
+        {/* Mobile hamburger */}
         <button
           className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white focus-visible:ring-2 focus-visible:ring-white/40"
-          aria-label="Open menu"
+          aria-label="Toggle menu"
           aria-expanded={open}
-          onClick={() => setOpen(true)}
+          onClick={() => setOpen((prev) => !prev)}
         >
-          <Menu size={24} />
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Overlay (make it nearly opaque) */}
+      {/* Mobile dropdown */}
       <div
-        className={`md:hidden fixed inset-0 bg-black/90 transition-opacity ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} z-40`}
-        onClick={() => setOpen(false)}
-      />
-
-      {/* Slide-over panel (ensure it's above the overlay) */}
-      <div
-        className={`md:hidden fixed top-0 right-0 h-full w-72 max-w-[80%] bg-[rgb(10,34,57)] shadow-xl border-l border-white/10 transition-transform duration-200 ${open ? "translate-x-0" : "translate-x-full"} z-50`}
-        role="dialog"
-        aria-modal="true"
+        className={`md:hidden absolute left-0 right-0 top-full mt-1 rounded-2xl border border-white/10 bg-[rgb(6,22,40)] shadow-xl transition-all duration-200 ${open ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"} origin-top z-50`}
       >
-        <div className="h-16 px-4 flex items-center justify-between border-b border-white/10">
-          <span className="text-white font-semibold">Menu</span>
-          <button
-            className="p-2 rounded-md text-white focus-visible:ring-2 focus-visible:ring-white/40"
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-          >
-            <X size={24} />
-          </button>
-        </div>
-
         <div className="px-4 py-4 flex flex-col gap-2">
-          <NavLink to="/" className={({ isActive }) => `${getLinkClass({ isActive })} block`} onClick={() => setOpen(false)}>Home</NavLink>
-          <NavLink to="/projects" className={({ isActive }) => `${getLinkClass({ isActive })} block`} onClick={() => setOpen(false)}>Projects</NavLink>
-          <NavLink to="/blog" className={({ isActive }) => `${getLinkClass({ isActive })} block`} onClick={() => setOpen(false)}>Blog</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? "text-[rgb(255,136,17)] font-semibold bg-white/5" : "text-white/80 hover:text-white hover:bg-white/5"}`
+            }
+            onClick={() => setOpen(false)}
+          >Home</NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? "text-[rgb(255,136,17)] font-semibold bg-white/5" : "text-white/80 hover:text-white hover:bg-white/5"}`
+            }
+            onClick={() => setOpen(false)}
+          >Projects</NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? "text-[rgb(255,136,17)] font-semibold bg-white/5" : "text-white/80 hover:text-white hover:bg-white/5"}`
+            }
+            onClick={() => setOpen(false)}
+          >Blog</NavLink>
         </div>
       </div>
     </nav>

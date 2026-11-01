@@ -21,5 +21,16 @@ export const projects = [
       github: "https://github.com/IqbalHazri/exercise-tracker-app",
       demo: null
     }
+  },
+  {
+    title: "Homelab IPAM",
+    summary: "An IP address management system for my homelab.",
+    tags: ["Python", "FastAPI", "PostgreSQL", "Docker"],
+    status: "wip", // "published" | "wip" | "idea"
+    year: 2026,
+    links: {
+      github: null,
+      demo: null
+    }
   }
 ];
