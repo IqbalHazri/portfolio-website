@@ -3,7 +3,6 @@
 
 /* ===== Base Reset / Defaults ===== */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -59,8 +58,13 @@ html, body {
 
 /* Global Dark Background */
 @layer base {
-  html, body, #root {
-    @apply bg-[rgb(10,34,57)] text-white min-h-screen;
+  html, body {
+    @apply bg-[rgb(10,34,57)] text-white;
+    background-image: radial-gradient(rgba(255, 136, 17, 0.3) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  body {
+    @apply text-white min-h-screen;
   }
 }
 

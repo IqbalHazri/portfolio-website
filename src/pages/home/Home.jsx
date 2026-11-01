@@ -45,7 +45,7 @@ const experiences = [
 
 export default function Home() {
   return (
-    <main className="font-sans bg-[rgb(10,34,57)] text-white min-h-screen px-6 py-12">
+    <main className="font-sans text-white min-h-screen px-6 py-12">
       {/* Hero Section */}
       <section className="text-center mb-20">
         <h1 className="text-5xl font-bold mb-4 text-[rgb(255,136,17)]">Hi, I'm Iqbal 👋</h1>
@@ -65,7 +65,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="max-w-3xl mx-auto mb-20 bg-white/10 p-8 rounded-lg shadow-lg">
+      <section className="max-w-3xl mx-auto mb-20 bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-lg">
         <h2 className="text-3xl font-semibold mb-4 text-[rgb(255,136,17)]">About Me</h2>
         <p className="text-gray-200 leading-relaxed">
           I'm a cybersecurity engineer with a passion for building secure, scalable
@@ -167,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="text-center py-16 bg-[rgb(10,34,57)]">
+      <section className="text-center py-16">
         <h2 className="text-3xl font-semibold mb-6 text-[rgb(255,136,17)]">
           Contact
         </h2>

@@ -11,7 +11,7 @@ export default function Projects() {
   const hasAny = projects.length > 0;
 
   return (
-    <div className="min-h-screen bg-[rgb(10,34,57)] text-white px-6 py-16">
+    <div className="min-h-screen text-white px-6 py-16">
       <div className="max-w-6xl mx-auto">
         <header className="mb-10">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[rgb(255,136,17)]/90">
@@ -38,7 +38,7 @@ export default function Projects() {
             ))}
           </div>
         ) : (
-          <div className="rounded-xl border border-white/10 bg-white/5 p-10 text-center">
+          <div className="rounded-xl border border-white/10 bg-white/10 backdrop-blur-sm p-10 text-center">
             <h2 className="text-2xl font-semibold mb-2 text-[rgb(255,136,17)]">
               🚧 Coming Soon
             </h2>

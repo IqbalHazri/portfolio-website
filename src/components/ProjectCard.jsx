@@ -8,7 +8,7 @@ const statusStyles = {
 
 export default function ProjectCard({ p }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 hover:border-white/20 transition">
+    <div className="rounded-xl border border-white/10 bg-white/10 backdrop-blur-sm p-5 hover:border-white/20 transition">
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-xl font-semibold text-white">{p.title}</h3>
         <span className={`text-xs px-2 py-1 rounded border ${statusStyles[p.status]}`}>

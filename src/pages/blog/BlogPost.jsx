@@ -19,14 +19,14 @@ export default function BlogPost() {
 
   if (!meta) {
     return (
-      <div className="min-h-screen bg-[rgb(10,34,57)] text-white flex items-center justify-center">
+      <div className="min-h-screen text-white flex items-center justify-center">
         <p>Post not found.</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[rgb(10,34,57)] text-white px-6 py-16">
+    <div className="min-h-screen text-white px-6 py-16">
       <article className="max-w-3xl mx-auto">
         <Link
           to="/blog"

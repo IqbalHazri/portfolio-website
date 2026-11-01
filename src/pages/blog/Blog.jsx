@@ -5,7 +5,7 @@ import { blogPosts } from "../../data/blog-posts";
 
 export default function Blog() {
   return (
-    <div className="min-h-screen bg-[rgb(10,34,57)] text-white px-6 py-16">
+    <div className="min-h-screen text-white px-6 py-16">
 
       <div className="max-w-4xl mx-auto">
         <header className="mb-12">
@@ -23,7 +23,7 @@ export default function Blog() {
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}
-              className="group block rounded-xl border border-white/10 bg-white/5 p-6 hover:border-white/20 transition-all"
+              className="group block rounded-xl border border-white/10 bg-white/10 backdrop-blur-sm p-6 hover:border-white/20 transition-all"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
