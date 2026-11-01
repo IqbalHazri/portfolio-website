@@ -3,11 +3,18 @@ import { Mail, Github, Linkedin, Cloud } from "lucide-react";
 // Job experiences
 const experiences = [
   {
+    role: "IT Security Specialist",
+    company: "Marsh",
+    location: "Kuala Lumpur, MY",
+    start: "Sep 2026",
+    end: "Present",
+  },
+  {
     role: "Cybersecurity Engineer",
     company: "Vireserve Sdn Bhd",
     location: "Petaling Jaya, MY",
     start: "Jul 2024",
-    end: "Present",
+    end: "Sep 2026",
     bullets: [
       "Built Presidio-based PII Detection APIs with custom recognizers (MY IC/Passport/Phone).",
       "Deployed Wazuh manager & dashboards; crafted custom vulnerability views and indices.",
